@@ -17,7 +17,7 @@ servidor.register(cors, {
 })
 
 
-// LOGIN
+
 servidor.post('/login', async (request, reply) => {
 
     const body = request.body
@@ -50,7 +50,7 @@ servidor.post('/login', async (request, reply) => {
 })
 
 
-// LISTAR USUÁRIOS
+
 servidor.get('/usuarios', async () => {
 
     const resultado = await sql.query(
@@ -62,7 +62,7 @@ servidor.get('/usuarios', async () => {
 })
 
 
-// CADASTRAR USUÁRIO
+
 servidor.post('/usuarios', async (request, reply) => {
 
     const body = request.body
@@ -93,7 +93,7 @@ servidor.post('/usuarios', async (request, reply) => {
 })
 
 
-// LISTAR PRODUTOS
+
 servidor.get('/produtos', async (request) => {
 
     const busca = request.query.busca
@@ -123,7 +123,7 @@ servidor.get('/produtos', async (request) => {
 })
 
 
-// BUSCAR PRODUTO
+
 servidor.get('/produtos/:id', async (request, reply) => {
 
     const id = request.params.id
@@ -145,7 +145,7 @@ servidor.get('/produtos/:id', async (request, reply) => {
 })
 
 
-// CADASTRAR PRODUTO
+
 servidor.post('/produtos', async (request, reply) => {
 
     const body = request.body
@@ -187,7 +187,7 @@ servidor.post('/produtos', async (request, reply) => {
 })
 
 
-// EDITAR PRODUTO
+
 servidor.put('/produtos/:id', async (request, reply) => {
 
     const body = request.body
@@ -233,7 +233,7 @@ servidor.put('/produtos/:id', async (request, reply) => {
 })
 
 
-// DELETAR PRODUTO
+
 servidor.delete('/produtos/:id', async (request, reply) => {
 
     const id = request.params.id
@@ -262,7 +262,7 @@ servidor.delete('/produtos/:id', async (request, reply) => {
 })
 
 
-// MOVIMENTAÇÃO
+
 servidor.post('/movimentacoes', async (request, reply) => {
 
     const body = request.body
@@ -368,7 +368,7 @@ servidor.post('/movimentacoes', async (request, reply) => {
 })
 
 
-// HISTÓRICO
+
 servidor.get('/movimentacoes', async () => {
 
     const resultado = await sql.query(
@@ -392,7 +392,7 @@ servidor.get('/movimentacoes', async () => {
 })
 
 
-// INICIAR SERVIDOR
+
 servidor.listen({
     port: 3000
 })
