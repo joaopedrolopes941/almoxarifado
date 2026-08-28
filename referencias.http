@@ -1,0 +1,98 @@
+### LOGIN
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+    "email": "joao@email.com",
+    "senha": "123456"
+}
+
+
+### LISTAR USUÁRIOS
+GET http://localhost:3000/usuarios
+
+
+### CADASTRAR USUÁRIO
+POST http://localhost:3000/usuarios
+Content-Type: application/json
+
+{
+    "nome": "Maria",
+    "email": "maria@email.com",
+    "usuario": "maria",
+    "senha": "123456"
+}
+
+
+### LISTAR PRODUTOS
+GET http://localhost:3000/produtos
+
+
+### FILTRAR PRODUTOS
+GET http://localhost:3000/produtos?busca=chave
+
+
+### BUSCAR PRODUTO
+GET http://localhost:3000/produtos/1
+
+
+### CADASTRAR PRODUTO
+POST http://localhost:3000/produtos
+Content-Type: application/json
+
+{
+    "nome": "Alicate",
+    "descricao": "Alicate universal",
+    "tamanho": "8 polegadas",
+    "peso": 0.3,
+    "caracteristicas": "Cabo emborrachado",
+    "quantidade_estoque": 10,
+    "estoque_minimo": 3
+}
+
+
+### EDITAR PRODUTO
+PUT http://localhost:3000/produtos/1
+Content-Type: application/json
+
+{
+    "nome": "Chave Phillips Profissional",
+    "descricao": "Chave para parafusos",
+    "tamanho": "8 polegadas",
+    "peso": 0.25,
+    "caracteristicas": "Cabo emborrachado e ponta imantada",
+    "quantidade_estoque": 20,
+    "estoque_minimo": 5
+}
+
+
+### EXCLUIR PRODUTO
+DELETE http://localhost:3000/produtos/1
+
+
+### ENTRADA DE ESTOQUE
+POST http://localhost:3000/movimentacoes
+Content-Type: application/json
+
+{
+    "id_produto": 1,
+    "id_usuario": 1,
+    "tipo": "entrada",
+    "quantidade": 10
+}
+
+
+### SAÍDA DE ESTOQUE
+POST http://localhost:3000/movimentacoes
+Content-Type: application/json
+
+{
+    "id_produto": 1,
+    "id_usuario": 1,
+    "tipo": "saida",
+    "quantidade": 5
+}
+
+
+### HISTÓRICO
+GET http://localhost:3000/movimentacoes
